@@ -10,9 +10,13 @@ $envVars = [
 ];
 
 foreach ($envVars as $envVar) {
-  $envValue = getenv($envVar);
-  echo nl2br("<b>{$envVar}</b>: {$envValue}\n");
+    $envValue = getenv($envVar);
+    echo nl2br("<b>{$envVar}</b>: {$envValue}\n");
 }
 
 $connection = new PDO("mysql:dbname=myapp;host=db", "dev", "123456");
-var_dump($connection);
+
+$sql = 'SELECT * FROM test';
+foreach ($connection->query($sql) as $row) {
+    print $row['teste'] . "\t";
+}

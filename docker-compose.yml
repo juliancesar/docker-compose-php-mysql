@@ -1,12 +1,12 @@
 web:
-  build: .
+  build: ./php/
   command: php -S 0.0.0.0:8000 -t /app
   links:
     - db
   ports:
     - "8000:8000"
   volumes:
-    - ./app:/app
+    - ./php/app:/app
 db:
   image: mysql
   ports:
