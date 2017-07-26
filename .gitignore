@@ -1,1 +1,4 @@
 php/app/*
+php/framework/*
+php/aws-sdk/*
+mysql-data/*
